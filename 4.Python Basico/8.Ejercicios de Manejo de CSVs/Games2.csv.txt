@@ -1,0 +1,3 @@
+game	gender	developer	clasification
+megaman	action	mappa	adult
+patapon	action	activision	adult

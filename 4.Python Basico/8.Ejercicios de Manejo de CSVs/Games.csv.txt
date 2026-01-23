@@ -1,0 +1,3 @@
+game,gender,developer,clasification
+Megaman,Action,Mappa,Adult
+Pocoyo,Action,Mappa,Adult

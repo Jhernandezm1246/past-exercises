@@ -1,0 +1,3 @@
+game,gender,developer,clasification
+patapon,action,nappa,adult
+megaman,action,nappa,adult
