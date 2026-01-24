@@ -1,0 +1,35 @@
+commit f6f6be46091fe7aebe14a6311bfe19e94e8ff175 (HEAD -> main)
+Author: JoaoHernandez <jhmbao@gmail.com>
+Date:   Fri Jan 23 14:11:06 2026 -0600
+
+    First commit (please note I had an issue with my first computer due to that I do not have access any longer to the first exercises from onboarding to programing logic      
+
+JH - On this commit we créate the main structure of the repository trying to start from the very top folder 
+
+commit 819a6c7ca53be7d9e45bc02f854fe609b498bd2d
+Author: JoaoHernandez <jhmbao@gmail.com>
+Date:   Fri Jan 23 14:08:26 2026 -0600
+
+
+
+PS C:\Users\jhmba\OneDrive\Documentos\Lyfter> cd duad
+PS C:\Users\jhmba\OneDrive\Documentos\Lyfter\duad> git log
+commit 6398de7ca12cd1220e5ae1dd2ff9c1fb68aaed94 (HEAD -> main, origin/main, origin/HEAD)
+Author: JoaoHernandez <jhmbao@gmail.com>
+Date:   Fri Jan 23 14:19:56 2026 -0600
+
+    third commit with empy folders
+
+JH - Since they were some exercises that I did not have due to issues with an old computer the initial folders remain empty I notice that they were not included on the inicial commit so went ahead and add a empty text document to make sure they were reflected on git hub
+
+commit 6d708bb63d694596e4aa1ebff47c6e764dcc99bf
+Author: JoaoHernandez <jhmbao@gmail.com>
+Date:   Fri Jan 23 14:17:24 2026 -0600
+
+    second commit with all the files from python some folder are not showing in here
+
+JH - On this commit we did the final push for all Python excecises to complete the first asigment 
+
+commit 3404ccf20814d2847e0533de43038f59352fcf61
+Author: JoaoHernandez <jhmbao@gmail.com>
+Date:   Fri Jan 23 14:06:36 2026 -0600
