@@ -1,0 +1,29 @@
+Requerimientos
+
+Cree un programa tener tenga una interfaz por linea de comando (es decir, a base de inputs y prints). 
+Este debe tener un menu que me permita accesar a todas las funciones (deberá validar que se ingrese una opción del valida del menú):
+
+Ingresar información de n cantidad de estudiantes, uno por uno.
+
+Cada estudiante debe incluir:
+
+Nombre completo
+Sección (ejemplo: 11B)
+Nota de español
+Nota de inglés
+Nota de sociales
+Nota de ciencias
+
+
+
+Deberá validar que las notas ingresadas sean validas (números de 0 a 100) y seguir pidiéndola hasta que sea valida.
+
+Ver la información de todos los estudiantes ingresados.
+Ver el top 3 de los estudiantes con la mejor nota promedio (es decir, el promedio de su nota de español+ nota de inglés + nota de sociales + nota de ciencias).
+Ver la nota promedio entre las notas de todos los estudiantes (es decir, el promedio del promedio de notas de cada uno).
+
+Exportar todos los datos actuales a un archivo CSV.
+
+Importar los datos de un archivo CSV previamente exportado.
+
+Si no hay un archivo previamente exportado, debe de decírselo al usuario.
