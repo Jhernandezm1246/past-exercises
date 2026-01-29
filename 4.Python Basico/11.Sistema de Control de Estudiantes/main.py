@@ -11,7 +11,16 @@ def main():
 
     student_records = []
     
-    system_start = str(input("Would you like to start the program (Y/N): ").upper())
+
+
+    system_start = str(input("Would you like to start the program (Y/N): ").upper()) 
+
+    while system_start != "Y" and system_start != "N": 
+        print("Please note that at this moment you should only select Y or N ") 
+        system_start = str(input("Would you like to start the program (Y/N): ").upper()) 
+        
+
+    
     while system_start == "Y":
         menu_number_selected = menu_system()
 

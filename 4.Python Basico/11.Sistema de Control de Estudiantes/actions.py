@@ -2,39 +2,54 @@ def new_student_info(selection):
 
     new_group_of_students = []
 
-    
 
     if selection == 1:
 
+        
+
+
+        number_of_new_students = input("Type the number of new students information you like to add: ")
+
+
+        if number_of_new_students.isdigit() == False:
+            while number_of_new_students.isdigit() == False:
+                print("Please only type numbers no letters or words")
+                number_of_new_students = input("Type the number of new students information you like to add: ")
+                if number_of_new_students.isdigit():
+                    break
+        
+        number_of_new_students = int(number_of_new_students)
+
         counter = 0 
-
-
-        try:
-            number_of_new_students = int(input("Type the number of new students information you like to add: "))
-
-        except ValueError as error:
-            print(f"Error [ValueError] Please note at this point only numbers are accepted")
-
 
         while counter < number_of_new_students:
 
             student_name = str(input("Type the student name: "))
+            if student_name.isalpha() == False:
+                while student_name.isalpha() == False:
+                    print("The name should only be letters and no numbers")
+                    student_name = str(input("Type the student name: "))
+
             student_section = str(input("Type the student section: "))
+
             student_spanish_score = float(input("Type the student spanish score: "))
             while student_spanish_score < 0 or student_spanish_score > 100:
                 print("The Score can not be higher than 100 or lower than 0")
                 print("Please try again")
                 student_spanish_score = float(input("Type the student spanish score: "))
+
             student_english_score = float(input("Type the student english score: "))
             while student_english_score < 0 or student_english_score > 100:
                 print("The Score can not be higher than 100 or lower than 0")
                 print("Please try again")
                 student_english_score = float(input("Type the student spanish score: "))
+
             student_history_score = float(input("Type the student history score: "))
             while student_history_score < 0 or student_history_score > 100:
                 print("The Score can not be higher than 100 or lower than 0")
                 print("Please try again")
                 student_history_score = float(input("Type the student spanish score: "))
+
             student_science_score = float(input("Type the student science score: "))
             while student_science_score < 0 or student_science_score > 100:
                 print("The Score can not be higher than 100 or lower than 0")
@@ -54,7 +69,7 @@ def new_student_info(selection):
 
             print(new_group_of_students)
 
-            return new_group_of_students
+        return new_group_of_students
         
 
 
@@ -111,6 +126,17 @@ def all_students_average_scores(selection,students_records):
 
     if selection == 4:
 
+        
+
+        total_score_science = 0
+        total_counter_science = 0
+        total_score_spanish = 0
+        total_counter_spanish = 0
+        total_score_english = 0
+        total_counter_english = 0
+        total_score_history = 0
+        total_counter_history = 0
+
     
         for student in students_records:
 
@@ -118,11 +144,34 @@ def all_students_average_scores(selection,students_records):
             spanish = float(student["spanish"])
             english = float(student["english"])
             history = float(student["history"])
-            total_scores = science + spanish + english + history 
+            
 
-            average_scores = total_scores / 4
+            if science :
+                total_score_science += science
+                total_counter_science += 1
 
-            print(f"Name : {student["name"]}, section : {student["section"]}, average_score {average_scores}")
+            if spanish :
+                total_score_spanish += spanish
+                total_counter_spanish += 1
+
+            if english :
+                total_score_english += english
+                total_counter_english += 1
+
+            if history :
+                total_score_history += history
+                total_counter_history += 1
+
+
+        final_score_all_students = total_score_science + total_score_spanish + total_score_english + total_score_history
+        final_count_all_students = total_counter_science + total_counter_spanish + total_counter_english + total_counter_history
+
+        average_scores = final_score_all_students / final_count_all_students
+
+        
+        print(f"Sum of all Student scores {final_score_all_students}")
+        print(f"Sum of all Student amount of scores {final_count_all_students}")
+        print(f"Total students average_score {average_scores}")
 
 
 def delete_student(selection,students_records):
