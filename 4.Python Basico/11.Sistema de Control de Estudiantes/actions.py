@@ -24,44 +24,117 @@ def new_student_info(selection):
 
         while counter < number_of_new_students:
 
-            student_name = str(input("Type the student name: "))
-            if student_name.isalpha() == False:
-                while student_name.isalpha() == False:
-                    print("The name should only be letters and no numbers")
-                    student_name = str(input("Type the student name: "))
+            while True:
+
+                student_name = input("Type the student name: ")
+
+                if any(letter.isdigit() for letter in student_name):
+                    print("The name should only include characters no numbers")
+                    continue
+
+                else:
+                    break
+
 
             student_section = str(input("Type the student section: "))
 
-            student_spanish_score = float(input("Type the student spanish score: "))
-            while student_spanish_score < 0 or student_spanish_score > 100:
-                print("The Score can not be higher than 100 or lower than 0")
-                print("Please try again")
-                student_spanish_score = float(input("Type the student spanish score: "))
+            #Spanish
 
-            student_english_score = float(input("Type the student english score: "))
-            while student_english_score < 0 or student_english_score > 100:
-                print("The Score can not be higher than 100 or lower than 0")
-                print("Please try again")
-                student_english_score = float(input("Type the student spanish score: "))
 
-            student_history_score = float(input("Type the student history score: "))
-            while student_history_score < 0 or student_history_score > 100:
-                print("The Score can not be higher than 100 or lower than 0")
-                print("Please try again")
-                student_history_score = float(input("Type the student spanish score: "))
+            while True:
+                student_spanish_score = input("Type the student spanish score: ")
 
-            student_science_score = float(input("Type the student science score: "))
-            while student_science_score < 0 or student_science_score > 100:
-                print("The Score can not be higher than 100 or lower than 0")
-                print("Please try again")
-                student_science_score = float(input("Type the student spanish score: "))
+                try:
+                    student_spanish_score = float(student_spanish_score)
+
+                except ValueError as error:
+                    print(f"Error [ValueError] Input should only be numbers")
+                    print("Please try again")
+                    continue
+
+                if student_spanish_score < 0 or student_spanish_score > 100:
+                    print(f"Error [ValueError] The Score can not be higher than 100 or lower than 0")
+                    print("Please try again")
+                    continue
+                    
+
+                if student_spanish_score >= 0 and student_spanish_score <= 100 :
+                    break
+
+
+
+            #English
+
+            while True:
+                student_english_score = input("Type the student spanish score: ")
+
+                try:
+                    student_english_score = float(student_english_score)
+
+                except ValueError as error:
+                    print(f"Error [ValueError] Input should only be numbers")
+                    print("Please try again")
+                    continue
+                
+                if student_english_score < 0 or student_english_score > 100:
+                    print(f"Error [ValueError] The Score can not be higher than 100 or lower than 0")
+                    print("Please try again")
+                    continue
+                    
+
+                if student_english_score >= 0 and student_english_score <= 100 :
+                    break
+            #History
+
+
+            while True:
+                student_history_score = input("Type the student spanish score: ")
+
+                try:
+                    student_history_score = float(student_history_score)
+
+                except ValueError as error:
+                    print(f"Error [ValueError] Input should only be numbers")
+                    print("Please try again")
+                    continue
+                
+                if student_history_score < 0 or student_history_score > 100:
+                    print(f"Error [ValueError] The Score can not be higher than 100 or lower than 0")
+                    print("Please try again")
+                    continue
+                    
+
+                if student_history_score >= 0 and student_history_score <= 100 :
+                    break
+
+            #Science
+
+            while True:
+                student_science_score = input("Type the student spanish score: ")
+
+                try:
+                    student_science_score = float(student_science_score)
+
+                except ValueError as error:
+                    print(f"Error [ValueError] Input should only be numbers")
+                    print("Please try again")
+                    continue
+                
+                if student_science_score < 0 or student_science_score > 100:
+                    print(f"Error [ValueError] The Score can not be higher than 100 or lower than 0")
+                    print("Please try again")
+                    continue
+                    
+
+                if student_science_score >= 0 and student_science_score <= 100 :
+                    break
 
             new_student = {"name" : student_name,
                             "section" : student_section,
-                            "spanish" : student_spanish_score,
-                            "english" : student_english_score,
-                            "history" : student_history_score,
-                            "science" : student_science_score}
+                            "spanish" : float(student_spanish_score),
+                            "english" : float(student_english_score),
+                            "history" : float(student_history_score),
+                            "science" : float(student_science_score)}
             
             new_group_of_students.append(new_student)
             
@@ -215,9 +288,7 @@ def all_students_average_scores_lower_than_sixty(selection,students_records):
             spanish = float(student["spanish"])
             english = float(student["english"])
             history = float(student["history"])
-            total_scores = science + spanish + english + history 
 
-            average_scores = total_scores / 4
-            if average_scores < 60:
-                print(f"Name : {student["name"]}, section : {student["section"]}, average_score {average_scores}")
+            if science < 60 or spanish < 60 or english < 60 or history < 60:
+                print(f"{student}")
 

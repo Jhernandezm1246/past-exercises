@@ -20,7 +20,7 @@ def students_data_export(menu_selection,students_group_list):
         print(flat_list)
 
         
-        with open("Student_records.csv","a",encoding='utf-8') as file:
+        with open("Student_records.csv","w",encoding='utf-8') as file:
 
             info_for_file = csv.DictWriter(file, fieldnames=["name","section","spanish","english","history","science"])
 
