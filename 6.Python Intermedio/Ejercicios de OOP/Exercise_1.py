@@ -9,7 +9,8 @@ def exercise_one():
 
     class Circle:
 
-        radios = 0
+        def __init__(self):
+            self.radius = radius
 
 
         def get_area(self,radius):
@@ -22,7 +23,7 @@ def exercise_one():
 
             area = pi * radius
 
-            return print(f"The area of the circle is: {area}")
+            return area
 
 
 
@@ -44,7 +45,9 @@ def exercise_one():
 
     circle_calculation = Circle()
 
-    circle_calculation.get_area(radius)
+    calculated_area = circle_calculation.get_area(radius)
+
+    print(f"The area of your circle is {calculated_area}")
 
 exercise_one()
 
