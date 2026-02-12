@@ -5,24 +5,39 @@
 
 class Rectangle():
 
-    def __init__(self):
-        self.width = 0
+    def __init__(self,width,height):
+        self.width = width
 
-        self.height = 0
+        self.height = height
+
+        if self.width.isdigit() == False:
+            while self.width.isdigit() == False:
+                print("The number can not be less than 0 or have letters please try again:")
+                self.width = input("Please type the width of the rectangle: ")
+                if self.width.isdigit() == True and float(self.width) >= 0:
+                    break
+
+
+        if self.height.isdigit() == False:
+            while self.height.isdigit() == False:
+                print("The number can not be less than 0 or have letters please try again:")
+                self.height = input("Please type the height of the rectangle: ")
+                if self.height.isdigit() == True and float(self.height) >= 0:
+                    break
 
     
 
-    def get_area(self,width,height):
+    def get_area(self):
 
-        area = float(width) * float(height)
+        area = float(self.width) * float(self.height)
 
         return area
 
-    def get_perimeter(self,width,height):
+    def get_perimeter(self):
 
-        two_side_width = float(width) * 2
+        two_side_width = float(self.width) * 2
 
-        two_side_height = float(height) * 2
+        two_side_height = float(self.height) * 2
 
         perimeter = two_side_width + two_side_height
 
@@ -34,27 +49,14 @@ width = input("Please type the width of the rectangle: ")
 height = input("Please type the hight of the rectangle: ")
 
 
-if width.isdigit() == False:
-    while width.isdigit() == False:
-        print("The number can not be less than 0 or have letters please try again:")
-        width = input("Please type the width of the rectangle: ")
-        if width.isdigit() == True and float(width) >= 0:
-            break
 
 
-if height.isdigit() == False:
-    while height.isdigit() == False:
-        print("The number can not be less than 0 or have letters please try again:")
-        height = input("Please type the height of the rectangle: ")
-        if height.isdigit() == True and float(height) >= 0:
-            break
 
+rectangle = Rectangle(width,height)
 
-rectangle = Rectangle()
+area = rectangle.get_area()
 
-area = rectangle.get_area(width,height)
-
-perimeter = rectangle.get_perimeter(width,height)
+perimeter = rectangle.get_perimeter()
 
 print("------------------------------------------------")
 print(f"The area of the rectangle is {area}")
