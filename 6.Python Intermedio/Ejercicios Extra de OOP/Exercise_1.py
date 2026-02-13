@@ -5,25 +5,40 @@
 
 class Rectangle():
 
-    def __init__(self,width,height):
-        self.width = width
+    def __init__(self):
+        
+        while True:
 
-        self.height = height
+            try:
 
-        if self.width.isdigit() == False:
-            while self.width.isdigit() == False:
-                print("The number can not be less than 0 or have letters please try again:")
-                self.width = input("Please type the width of the rectangle: ")
-                if self.width.isdigit() == True and float(self.width) >= 0:
+                self.width = float(input("Please type the width of the rectangle: "))
+
+                if self.width > 0:
                     break
 
+                else:
+                    
+                    print(f"The number can not be less than 0  please try again:")
 
-        if self.height.isdigit() == False:
-            while self.height.isdigit() == False:
-                print("The number can not be less than 0 or have letters please try again:")
-                self.height = input("Please type the height of the rectangle: ")
-                if self.height.isdigit() == True and float(self.height) >= 0:
+            except ValueError as error:
+
+                print(f"Error [ValueError] The number can not have letters please try again:")
+
+        while True:
+
+            try:
+
+                self.height = float(input("Please type the height of the rectangle: "))
+
+                if self.height > 0:
                     break
+
+                else:
+                    
+                    print(f"The number can not be less than 0  please try again:")
+            except ValueError as error:
+
+                print(f"Error [ValueError] The number can not have letters please try again:")
 
     
 
@@ -44,15 +59,8 @@ class Rectangle():
         return perimeter
 
 
-width = input("Please type the width of the rectangle: ")
 
-height = input("Please type the hight of the rectangle: ")
-
-
-
-
-
-rectangle = Rectangle(width,height)
+rectangle = Rectangle()
 
 area = rectangle.get_area()
 
