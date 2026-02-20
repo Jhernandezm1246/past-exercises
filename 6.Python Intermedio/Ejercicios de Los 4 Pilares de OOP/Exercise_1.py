@@ -78,7 +78,7 @@ class SavingsAccount(BankAccount):
         
 
         while True:
-            subtract = input("Type the amount you like to insert: ")
+            subtract = input("Type the amount you like to withdraw: ")
 
             try:
                 subtract = float(subtract)
@@ -88,8 +88,10 @@ class SavingsAccount(BankAccount):
 
                 else:
 
-                    if subtract < self.min_balance and subtract <= self.balance:
-                        print(f"You are not allowed to subtract less than {self.min_balance}")
+                    remaining_balance  = self.balance - subtract
+
+                    if remaining_balance < self.min_balance:
+                        print(f"You are not allowed to subtract an amount that will leave you below {self.min_balance}")
 
                     else:
 
